@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    <a class="navbar-brand" href="#">Booking service</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 mt-4">
+      <form class="form-inline">
+        <div class="form-group mr-2 mb-2">
+          <label for="" class="sr-only">filtro</label>
+          <input type="text" class="form-control" id="" placeholder="Filtrar por bookingId y bookingPrice">
+        </div>
+        <button type="submit" class=" btn btn-outline-secondary mb-2">- Filtrar</button>
+      </form>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">BookingId</th>
+            <th scope="col">Cliente</th>
+            <th scope="col">Fecha de Creación</th>
+            <th scope="col">Dirección</th>
+            <th scope="col">Precio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let post of posts">
+            <td>{{ post.bookingId }}</td>
+            <td>{{ post.firstName }} {{ post.LastName }}</td>
+            <td>{{ post.bookingTime  }}</td>
+            <td>{{ post.streetAddress }}</td>
+            <td>{{ post.bookingPrice }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
