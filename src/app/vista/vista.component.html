@@ -38,10 +38,12 @@
         <tbody>
           <tr *ngFor="let post of posts">
             <td>{{ post.bookingId }}</td>
-            <td>{{ post.firstName }} {{ post.LastName }}</td>
+           <td>{{ post.firstName }} {{ post.LastName }}</td>
             <td>{{ post.bookingTime  }}</td>
-            <td>{{ post.streetAddress }}</td>
-            <td>{{ post.bookingPrice }}</td>
+            <td>{{post.bookingFields | json 
+              
+            }}</td>
+            <td>{{ post.bookingPrice  }}</td>
           </tr>
         </tbody>
       </table>

@@ -49,7 +49,14 @@ export class VistaComponent implements OnInit {
   constructor(private data : DataService) {
     this.data.obtenerDatos().subscribe(dato => {
 console.log("Completo", dato)
-this.posts = dato
+this.posts = dato;
+
+this.posts.forEach(element => {
+  let json: JSON
+  
+console.log(this.posts['bookingId'])
+});
+
     });
 
   }

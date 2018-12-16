@@ -1,7 +1,8 @@
 export interface Book {
-
+    
  'bookingId'  : number;
- 'LastName':String;
+
+    'bookingFields' : [];
 
  'bookingCreatedTime' : number; 
  'streetAddress' : String;
