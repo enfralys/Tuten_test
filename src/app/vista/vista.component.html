@@ -15,7 +15,7 @@
   </div>
 </nav>
 
-<div class="container">
+<div class="container mt-5">
   <div class="row">
     <div class="col-12 mt-4">
       <form class="form-inline">
@@ -25,7 +25,7 @@
         </div>
         <button type="submit" class=" btn btn-outline-secondary mb-2">- Filtrar</button>
       </form>
-      <table class="table table-bordered">
+      <table class="table table-bordered table-responsive">
         <thead>
           <tr>
             <th scope="col">BookingId</th>
@@ -36,15 +36,16 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let post of posts">
-            <td>{{ post.bookingId }}</td>
-            <td>{{ post.firstName }} {{ post.LastName }}</td>
-            <td>{{ post.bookingTime  }}</td>
-            <td>{{ post.streetAddress }}</td>
-            <td>{{ post.bookingPrice }}</td>
+          <tr *ngFor="let booking of bookings | paginate: { itemsPerPage: 10, currentPage: paginaActual }">
+            <td>{{ booking.bookingId }}</td>
+            <td>{{ booking.firstName }} {{ booking.lastName }}</td>
+            <td>{{ booking.bookingTime }}</td>
+            <td>{{ booking.streetAddress }}</td>
+            <td>{{ booking.bookingPrice }}</td>
           </tr>
         </tbody>
       </table>
+      <pagination-controls class="my-pagination" (pageChange)="paginaActual = $event"></pagination-controls>
     </div>
   </div>
 </div>

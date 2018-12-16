@@ -2,3 +2,9 @@
     padding: 50px;
 
 }
+
+.my-pagination /deep/ .ngx-pagination {
+  padding-left: 0;
+}
+
+.my-pagination /deep/ .ngx-pagination .current {}
