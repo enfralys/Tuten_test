@@ -21,7 +21,7 @@
       <form class="form-inline">
         <div class="form-group mr-2 mb-2">
           <label for="" class="sr-only">filtro</label>
-          <input type="text" class="form-control" id="" placeholder="Filtrar por bookingId y bookingPrice">
+          <input [(ngModel)]="searchText" name="searchText" (keyup)="showSearchResults($event)" type="text" class="form-control" id="" placeholder="Filtrar por bookingId y bookingPrice">
         </div>
         <button type="submit" class=" btn btn-outline-secondary mb-2">- Filtrar</button>
       </form>
@@ -36,7 +36,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let booking of bookings | paginate: { itemsPerPage: 10, currentPage: paginaActual }">
+          <tr *ngFor="let booking of bookings | paginate: { itemsPerPage: 10, currentPage: paginaActual } | search : searchText">
             <td>{{ booking.bookingId }}</td>
             <td>{{ booking.firstName }} {{ booking.lastName }}</td>
             <td>{{ booking.bookingTime }}</td>

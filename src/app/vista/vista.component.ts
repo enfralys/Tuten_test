@@ -40,6 +40,10 @@ export class VistaComponent implements OnInit {
 
   }
 
+  showSearchResults(event: any): void {
+    console.log(event.target.value);
+  }
+
 
   ngOnInit() {}
 

@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { VistaComponent } from './vista/vista.component';
 import { DataService } from './data.service';
+import { SearchPipe } from './search.pipe';
 
 const routes: Route[]=[
 {path:'dataview' , component: LoginComponent},
@@ -22,6 +23,7 @@ const routes: Route[]=[
     AppComponent,
     LoginComponent,
     VistaComponent,
+    SearchPipe,
 
   ],
   imports: [
