@@ -36,14 +36,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let post of posts">
-            <td>{{ post.bookingId }}</td>
-           <td>{{ post.firstName }} {{ post.LastName }}</td>
-            <td>{{ post.bookingTime  }}</td>
-            <td>{{post.bookingFields | json 
-              
-            }}</td>
-            <td>{{ post.bookingPrice  }}</td>
+          <tr *ngFor="let booking of bookings | paginate: { itemsPerPage: 10, currentPage: paginaActual } ">
+            <td>{{ booking.bookingId }}</td>
+            <td>{{ booking.firstName }} {{ booking.lastName }}</td>
+            <td>{{ booking.bookingTime }}</td>
+            <td>{{ booking.streetAddress }}</td>
+            <td>{{ booking.bookingPrice }}</td>
           </tr>
         </tbody>
       </table>

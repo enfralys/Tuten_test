@@ -18,20 +18,31 @@ export class VistaComponent implements OnInit {
 
   constructor(private data: DataService) {
     this.data.obtenerDatos().subscribe(dato => {
-console.log("Completo", dato)
-this.posts = dato;
+       console.log("Completo", dato)
+       this.posts = dato
 
-this.posts.forEach(element => {
-  let json: JSON
-  
-console.log(this.posts['bookingId'])
-});
+      for(let data of dato ){
+
+        this.booking              = new Booking();
+        this.booking.bookingId    = data["bookingId"];
+        this.booking.bookingTime  = data["bookingTime"];
+        this.booking.bookingPrice = data["bookingPrice"];
+
+        let bookingFields = JSON.parse(data["bookingFields"]);
+
+        this.booking.firstName     = bookingFields["firstName"];
+        this.booking.lastName      = bookingFields["lastName"];
+        this.booking.streetAddress = bookingFields["location"]["streetAddress"];
+
+        this.bookings.push(this.booking);
+      }
+      
 
     });
 
   }
-
-
+ 
+  
   ngOnInit() {}
 
 }
