@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { Vista } from '../vista';
-import { Book } from "../book";
+import { Book, Booking } from "../book";
+
 @Component({
   selector: 'app-vista',
   templateUrl: './vista.component.html',
@@ -10,43 +11,12 @@ import { Book } from "../book";
 
 export class VistaComponent implements OnInit {
 
-  datos = [
-    {
-      "bookingId": 1,
-      "firstName": "Juan",
-      "LastName": "Palencia",
-      "bookingTime": 1022018,
-      "streetAddress": "Valencia",
-      "bookingPrice": 728.87
-    },
-    {
-      "bookingId": 2,
-      "firstName": "Johan",
-      "LastName": "Palencia",
-      "bookingTime": 1022018,
-      "streetAddress": "Valencia",
-      "bookingPrice": 728.87
-    },
-    {
-      "bookingId": 3,
-      "firstName": "Juana",
-      "LastName": "Palencia",
-      "bookingTime": 1022018,
-      "streetAddress": "Valencia",
-      "bookingPrice": 728.87
-    },
-    {
-      "bookingId": 4,
-      "firstName": "Manuel",
-      "LastName": "Palencia",
-      "bookingTime": 1022018,
-      "streetAddress": "Valencia",
-      "bookingPrice": 728.87
-    }
-  ];
+  booking: Booking;
+  bookings = [];
+  posts: Book[];
+  paginaActual: number = 1;
 
-  posts: Book [];
-  constructor(private data : DataService) {
+  constructor(private data: DataService) {
     this.data.obtenerDatos().subscribe(dato => {
 console.log("Completo", dato)
 this.posts = dato;
@@ -62,7 +32,6 @@ console.log(this.posts['bookingId'])
   }
 
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }
