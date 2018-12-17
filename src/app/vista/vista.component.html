@@ -27,11 +27,11 @@
           </div>
           <div class="form-group col-md-3">
             <label for="precioDesde">Filtrar por bookingPrice</label>
-            <input type="text" class="form-control" id="precioDesde" placeholder="Precio desde">
+            <input [(ngModel)]="priceText" name="priceText" type="text" class="form-control" id="precioDesde" placeholder="Precio desde">
           </div>
           <div class="form-group col-md-3">
             <label for="precioHasta" style="visibility:hidden">Filtrar por bookingPrice</label>
-            <input type="text" class="form-control" id="precioHasta" placeholder="Precio hasta">
+            <input [(ngModel)]="priceCompare" name="priceCompare" type="text" class="form-control" id="precioHasta" placeholder="Precio hasta">
           </div>
         </div>
       </form>
@@ -49,12 +49,12 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let booking of bookings | search : searchText |  paginate: { itemsPerPage: 10, currentPage: paginaActual } ">
-              <td scope="row">{{ booking.bookingId | search }}</td>
+            <tr *ngFor="let booking of bookings | search : searchText | price : priceText|  price2 : priceCompare|  paginate: { itemsPerPage: 10, currentPage: paginaActual } ">
+              <td scope="row">{{ booking.bookingId  }}</td>
               <td>{{ booking.firstName }} {{ booking.lastName }}</td>
               <td>{{ booking.bookingTime }}</td>
               <td>{{ booking.streetAddress }}</td>
-              <td>{{ booking.bookingPrice }}</td>
+              <td>{{ booking.bookingPrice  }}</td>
             </tr>
           </tbody>
         </table>
