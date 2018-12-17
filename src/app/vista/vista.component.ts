@@ -13,6 +13,7 @@ export class VistaComponent implements OnInit {
 
   booking: Booking;
   bookings = [];
+  bookorder= [];
   posts: Book[];
   paginaActual: number = 1;
 
@@ -33,16 +34,26 @@ export class VistaComponent implements OnInit {
         this.booking.firstName     = bookingFields["firstName"];
         this.booking.lastName      = bookingFields["lastName"];
         this.booking.streetAddress = bookingFields["location"]["streetAddress"];
-
-        this.bookings.push(this.booking);
-      }
+        
       
+        this.bookings.push(this.booking);
+
+
+      
+  
+
+        
+      }
 
     });
 
   }
- 
-  
+
+  showSearchResults(event: any): void {
+    console.log(event.target.value);
+  }
+
+
   ngOnInit() {}
 
 }
