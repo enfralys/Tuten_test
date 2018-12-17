@@ -37,8 +37,8 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let booking of bookings | paginate: { itemsPerPage: 10, currentPage: paginaActual } | search : searchText ">
-              <td>{{ booking.bookingId }}</td>
+            <tr *ngFor="let booking of bookings |search : searchText |  paginate: { itemsPerPage: 10, currentPage: paginaActual } ">
+              <td>{{ booking.bookingId | search }}</td>
               <td>{{ booking.firstName }} {{ booking.lastName }}</td>
               <td>{{ booking.bookingTime }}</td>
               <td>{{ booking.streetAddress }}</td>
