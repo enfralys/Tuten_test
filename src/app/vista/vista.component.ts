@@ -13,15 +13,16 @@ export class VistaComponent implements OnInit {
 
   booking: Booking;
   bookings = [];
+  bookorder= [];
   posts: Book[];
   paginaActual: number = 1;
 
   constructor(private data: DataService) {
     this.data.obtenerDatos().subscribe(dato => {
-      console.log(dato.length)
-      // this.posts = dato
+       console.log("Completo", dato)
+       this.posts = dato
 
-      for(let data of dato){
+      for(let data of dato ){
 
         this.booking              = new Booking();
         this.booking.bookingId    = data["bookingId"];
@@ -33,9 +34,17 @@ export class VistaComponent implements OnInit {
         this.booking.firstName     = bookingFields["firstName"];
         this.booking.lastName      = bookingFields["lastName"];
         this.booking.streetAddress = bookingFields["location"]["streetAddress"];
-
+        
+      
         this.bookings.push(this.booking);
+
+
+      
+  
+
+        
       }
+
     });
 
   }
