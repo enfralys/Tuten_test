@@ -17,7 +17,7 @@
 
 <div class="container mt-5">
   <div class="row">
-    <div class="col-12 mt-4">
+    <div class="col-12">
       <form class="form-inline">
         <div class="form-group mr-2 mb-2">
           <label for="" class="sr-only">filtro</label>
@@ -25,27 +25,31 @@
         </div>
         <button type="submit" class=" btn btn-outline-secondary mb-2">- Filtrar</button>
       </form>
-      <table class="table table-bordered table-responsive">
-        <thead>
-          <tr>
-            <th scope="col">BookingId</th>
-            <th scope="col">Cliente</th>
-            <th scope="col">Fecha de Creación</th>
-            <th scope="col">Dirección</th>
-            <th scope="col">Precio</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let booking of bookings | paginate: { itemsPerPage: 10, currentPage: paginaActual } | search : searchText">
-            <td>{{ booking.bookingId }}</td>
-            <td>{{ booking.firstName }} {{ booking.lastName }}</td>
-            <td>{{ booking.bookingTime }}</td>
-            <td>{{ booking.streetAddress }}</td>
-            <td>{{ booking.bookingPrice }}</td>
-          </tr>
-        </tbody>
-      </table>
-      <pagination-controls class="my-pagination" (pageChange)="paginaActual = $event"></pagination-controls>
+    </div>
+    <div class="col-12">
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">BookingId</th>
+              <th scope="col">Cliente</th>
+              <th scope="col">Fecha de Creación</th>
+              <th scope="col">Dirección</th>
+              <th scope="col">Precio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let booking of bookings | paginate: { itemsPerPage: 10, currentPage: paginaActual } | search : searchText">
+              <th scope="row">{{ booking.bookingId }}</th>
+              <td>{{ booking.firstName }} {{ booking.lastName }}</td>
+              <td>{{ booking.bookingTime }}</td>
+              <td>{{ booking.streetAddress }}</td>
+              <td>{{ booking.bookingPrice }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <pagination-controls class="my-pagination" (pageChange)="paginaActual = $event"></pagination-controls>
+      </div>
     </div>
   </div>
 </div>

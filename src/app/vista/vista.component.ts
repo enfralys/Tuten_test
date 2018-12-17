@@ -18,7 +18,7 @@ export class VistaComponent implements OnInit {
 
   constructor(private data: DataService) {
     this.data.obtenerDatos().subscribe(dato => {
-      // console.log("Completo", dato)
+      console.log(dato.length)
       // this.posts = dato
 
       for(let data of dato){

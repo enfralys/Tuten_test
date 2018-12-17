@@ -10,7 +10,16 @@ export class SearchPipe implements PipeTransform {
 
     if (!searchText) return bookings;
 
-    return bookings.filter(booking => booking.bookingId == searchText);
+    // function name(query) {
+    //   return bookings.filter(function(el) {
+    //     return el.bookingId.indexOf(query) > -1;
+    //   })
+    // }
+
+    // return name(searchText)
+
+    // return bookings.filter(booking => booking.bookingId == searchText);
+    return bookings.map(booking => booking.bookingId).indexOf(searchText);
   }
 
 }
