@@ -11,7 +11,7 @@ export class Price2Pipe implements PipeTransform {
     if (!priceCompare) return bookings;
     console.log(priceCompare)
   priceCompare = priceCompare.toLowerCase()
-  return  bookings.filter(booking =>  booking.bookingPrice <  priceCompare)
+  return  bookings.filter(booking =>  booking.bookingPrice <=  priceCompare)
   
      
   }

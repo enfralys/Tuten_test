@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Transform } from 'stream';
+
 
 @Pipe({
   name: 'price',
@@ -13,18 +13,9 @@ export class PricePipe implements PipeTransform {
     if (!priceText) return bookings;
     console.log(priceText)
 
-  return  bookings.filter(booking =>  booking.bookingPrice >  priceText)
+  return  bookings.filter(booking =>  booking.bookingPrice >=  priceText)
 }
 
 
-Transform(bookings:any[], priceCompare:String): any[] {
 
-  if (!bookings) return [];
-  if (!priceCompare) return bookings;
-  console.log(priceCompare)
-priceCompare = priceCompare.toLowerCase()
-return  bookings.filter(booking =>  booking.bookingPrice <  priceCompare)
-
-   
-}
 }
