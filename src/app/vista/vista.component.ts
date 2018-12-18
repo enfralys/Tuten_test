@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
-import { Vista } from '../vista';
 import { Book, Booking } from "../book";
 
 @Component({
@@ -19,7 +18,6 @@ export class VistaComponent implements OnInit {
 
   constructor(private data: DataService) {
     this.data.obtenerDatos().subscribe(dato => {
-       console.log("Completo", dato)
        this.posts = dato
 
       for(let data of dato ){
@@ -34,15 +32,15 @@ export class VistaComponent implements OnInit {
         this.booking.firstName     = bookingFields["firstName"];
         this.booking.lastName      = bookingFields["lastName"];
         this.booking.streetAddress = bookingFields["location"]["streetAddress"];
-        
-      
+
+
         this.bookings.push(this.booking);
 
 
-      
-  
 
-        
+
+
+
       }
 
     });
