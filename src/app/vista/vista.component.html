@@ -1,17 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container">
-    <a class="navbar-brand" href="#">Booking service</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-      aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-      </ul>
-    </div>
+    <a class="navbar-brand" href="./">Booking service</a>
   </div>
 </nav>
 
@@ -23,15 +12,14 @@
           <div class="form-group col-md-6">
             <label for="searchText">Filtrar por bookingId</label>
             <input [(ngModel)]="searchText" name="searchText" type="text" class="form-control"
-              id="searchText" placeholder="Filtrar por bookingId y bookingPrice">
+              id="searchText" placeholder="Filtrar por bookingId">
           </div>
-          <div class="form-group col-md-3">
-            <label for="precioDesde">Filtrar por bookingPrice</label>
-            <input [(ngModel)]="priceText" name="priceText" type="text" class="form-control" id="precioDesde" placeholder="Precio desde">
-          </div>
-          <div class="form-group col-md-3">
-            <label for="precioHasta" style="visibility:hidden">Filtrar por bookingPrice</label>
-            <input [(ngModel)]="priceCompare" name="priceCompare" type="text" class="form-control" id="precioHasta" placeholder="Precio hasta">
+          <div class="form-group col-md-6">
+            <label for="precioDesde" class="w-100">Filtrar por bookingPrice</label>
+            <div class="d-flex">
+              <input [(ngModel)]="priceText" name="priceText" type="text" class="form-control mr-1" id="precioDesde" placeholder="Precio desde">
+              <input [(ngModel)]="priceCompare" name="priceCompare" type="text" class="form-control" id="precioHasta" placeholder="Precio hasta">
+            </div>
           </div>
         </div>
       </form>
@@ -52,7 +40,7 @@
             <tr *ngFor="let booking of bookings | search : searchText | price : priceText|  price2 : priceCompare|  paginate: { itemsPerPage: 10, currentPage: paginaActual } ">
               <td scope="row">{{ booking.bookingId  }}</td>
               <td>{{ booking.firstName }} {{ booking.lastName }}</td>
-              <td>{{ booking.bookingTime }}</td>
+              <td>{{ booking.bookingTime | date }}</td>
               <td>{{ booking.streetAddress }}</td>
               <td>{{ booking.bookingPrice  }}</td>
             </tr>

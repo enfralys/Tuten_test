@@ -1,32 +1,24 @@
-<<<<<<< HEAD
 # Tuten_Test
-Banco de Pruebas del Examen Tecnico.
-=======
-# AngCrud
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.2.
+Prueba Tuten Full Stack - Examen Técnico.
 
-## Development server
+Tuten_Test es una aplicacione web desarrollada usando Angular 6 y Boostrap 4. 
+Este proyecto realiza peticiiones a unaa api de prueba y muestra los resultados en una tabla.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+<div align="center"><a> <img src="./src/assets/VueFlat.jpg"> </a></div>
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+El proyecto asido generado con [Angular CLI](https://github.com/angular/angular-cli) version 7.1.2.
 
-## Build
+## Servidor de desarrollo
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Ejecutar `ng serve` for a dev server.
 
-## Running unit tests
+## Compilar
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Ejecute `ng build` para compilar el proyecto. El directorio de salida será `dist/`.
 
-## Running end-to-end tests
+## Componentes usados
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
->>>>>>> 0.0.1
+- Angular: 7.1.0,
+- Bootstrap: 4.0.0
